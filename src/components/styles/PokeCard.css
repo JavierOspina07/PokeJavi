@@ -1,0 +1,352 @@
+.pokecard {
+  width: 100%;
+
+  max-width: 350px;
+
+  border-radius: 0.7em;
+
+  border: 0.7em solid #ccc;
+
+  cursor: pointer;
+
+  transition: transform 150ms ease;
+}
+
+.pokecard:hover {
+  transform: scale(1.03);
+}
+
+.pokecard__header {
+  background-color: #999;
+
+  aspect-ratio: 2;
+
+  position: relative;
+}
+
+.pokecard__image {
+  position: absolute;
+
+  width: 60%;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  top: 1.5em;
+}
+
+.pokecard__body {
+  padding: 3.5em 1em 2em;
+}
+
+.pokecard__name {
+  text-align: center;
+
+  text-transform: capitalize;
+
+  font-size: 1.6rem;
+
+  font-weight: 400;
+
+  margin-bottom: 0.2em;
+}
+
+.pokecard__types {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 0.7em;
+
+  margin-bottom: 1em;
+}
+
+.pokecard__typename {
+  text-transform: capitalize;
+}
+
+.pokecard__typename:nth-child(2)::before {
+  content: "/";
+
+  padding-right: 0.7em;
+}
+
+.pokecard__hr {
+  margin-bottom: 1em;
+
+  border: 1px solid #ccc4;
+}
+
+.pokecard__stats {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  justify-items: center;
+
+  gap: 1.5em 0.2em;
+}
+
+.pokecard__stat {
+  display: grid;
+
+  gap: 0.5em;
+
+  justify-items: center;
+}
+
+.pokecard__stat__name {
+  font-size: 0.7rem;
+
+  font-weight: 300;
+
+  text-transform: uppercase;
+}
+
+.pokecard__stat__value {
+  font-weight: 500;
+
+  font-size: 1rem;
+}
+
+/* === COLORES DE LA CARD === */
+
+/* FIRE  */
+.fire-header {
+  background: var(--fire-header);
+}
+
+.fire-border {
+  border-color: var(--fire-border);
+}
+
+.fire-text {
+  color: var(--fire-text);
+}
+
+/* WATER */
+
+.water-header {
+  background: var(--water-header);
+}
+.water-border {
+  border-color: var(--water-border);
+}
+
+.water-text {
+  color: var(--water-text);
+}
+
+/* GRASS */
+
+.grass-header {
+  background: var(--grass-header);
+}
+.grass-border {
+  border-color: var(--grass-border);
+}
+
+.grass-text {
+  color: var(--grass-text);
+}
+
+/* BUG */
+
+.bug-header {
+  background: var(--bug-header);
+}
+.bug-border {
+  border-color: var(--bug-border);
+}
+
+.bug-text {
+  color: var(--bug-text);
+}
+
+/* NORMAL */
+
+.normal-header {
+  background: var(--normal-header);
+}
+.normal-border {
+  border-color: var(--normal-border);
+}
+
+.normal-text {
+  color: var(--normal-text);
+}
+
+/* POISON */
+
+.poison-header {
+  background: var(--poison-header);
+}
+.poison-border {
+  border-color: var(--poison-border);
+}
+
+.poison-text {
+  color: var(--poison-text);
+}
+
+/* ELECTRIC */
+
+.electric-header {
+  background: var(--electric-header);
+}
+.electric-border {
+  border-color: var(--electric-border);
+}
+
+.electric-text {
+  color: var(--electric-text);
+}
+
+/* GROUND */
+
+.ground-header {
+  background: var(--ground-header);
+}
+.ground-border {
+  border-color: var(--ground-border);
+}
+
+.ground-text {
+  color: var(--ground-text);
+}
+
+/* FAIRY */
+
+.fairy-header {
+  background: var(--fairy-header);
+}
+.fairy-border {
+  border-color: var(--fairy-border);
+}
+
+.fairy-text {
+  color: var(--fairy-text);
+}
+
+
+
+/* FIGHTING */
+
+.fighting-header {
+  background: var(--fighting-header);
+}
+.fighting-border {
+  border-color: var(--fighting-border);
+}
+
+.fighting-text {
+  color: var(--fighting-text);
+}
+
+/* PSYCHIC */
+
+.psychic-header {
+  background: var(--psychic-header);
+}
+.psychic-border {
+  border-color: var(--psychic-border);
+}
+
+.psychic-text {
+  color: var(--psychic-text);
+}
+
+
+/* ROCK */
+
+.rock-header {
+  background: var(--rock-header);
+}
+.rock-border {
+  border-color: var(--rock-border);
+}
+
+.rock-text {
+  color: var(--rock-text);
+}
+
+
+
+/* GHOST */
+
+.ghost-header {
+  background: var(--ghost-header);
+}
+.ghost-border {
+  border-color: var(--ghost-border);
+}
+
+.ghost-text {
+  color: var(--ghost-text);
+}
+
+/* ICE */
+
+.ice-header {
+  background: var(--ice-header);
+}
+.ice-border {
+  border-color: var(--ice-border);
+}
+
+.ice-text {
+  color: var(--ice-text);
+}
+
+/* DRAGON */
+
+.dragon-header {
+  background: var(--dragon-header);
+}
+.dragon-border {
+  border-color: var(--dragon-border);
+}
+
+.dragon-text {
+  color: var(--dragon-text);
+}
+
+
+/* DARK */
+
+.dark-header {
+  background: var(--dark-header);
+}
+.dark-border {
+  border-color: var(--dark-border);
+}
+
+.dark-text {
+  color: var(--dark-text);
+}
+
+/* steel */
+
+.steel-header {
+  background: var(--steel-header);
+}
+.steel-border {
+  border-color: var(--steel-border);
+}
+
+.steel-text {
+  color: var(--steel-text);
+}
+
+
+
+
+
+
+
+
+
+
+
+
