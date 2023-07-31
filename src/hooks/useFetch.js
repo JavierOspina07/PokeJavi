@@ -9,11 +9,10 @@ const useFetch = (url) => {
     axios
       .get(url)
       .then((res) => setInfoApi(res.data))
-      .catch((err) => console.log(err))
-
+      .catch((err) => console.log(err));
   };
 
-  return[infoApi, getApi ]
+  return [infoApi, getApi];
 };
 
 export default useFetch;
