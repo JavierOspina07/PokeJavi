@@ -1,14 +1,9 @@
 .pokecard {
   width: 100%;
-
   max-width: 350px;
-
   border-radius: 0.7em;
-
   border: 0.7em solid #ccc;
-
   cursor: pointer;
-
   transition: transform 150ms ease;
 }
 
@@ -18,21 +13,15 @@
 
 .pokecard__header {
   background-color: #999;
-
   aspect-ratio: 2;
-
   position: relative;
 }
 
 .pokecard__image {
   position: absolute;
-
   width: 60%;
-
   left: 50%;
-
   transform: translateX(-50%);
-
   top: 1.5em;
 }
 
@@ -42,23 +31,16 @@
 
 .pokecard__name {
   text-align: center;
-
   text-transform: capitalize;
-
   font-size: 1.6rem;
-
   font-weight: 400;
-
   margin-bottom: 0.2em;
 }
 
 .pokecard__types {
   display: flex;
-
   justify-content: center;
-
   gap: 0.7em;
-
   margin-bottom: 1em;
 }
 
@@ -68,45 +50,35 @@
 
 .pokecard__typename:nth-child(2)::before {
   content: "/";
-
   padding-right: 0.7em;
 }
 
 .pokecard__hr {
   margin-bottom: 1em;
-
   border: 1px solid #ccc4;
 }
 
 .pokecard__stats {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   justify-items: center;
-
   gap: 1.5em 0.2em;
 }
 
 .pokecard__stat {
   display: grid;
-
   gap: 0.5em;
-
   justify-items: center;
 }
 
 .pokecard__stat__name {
   font-size: 0.7rem;
-
   font-weight: 300;
-
   text-transform: uppercase;
 }
 
 .pokecard__stat__value {
   font-weight: 500;
-
   font-size: 1rem;
 }
 

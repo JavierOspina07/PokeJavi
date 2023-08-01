@@ -2,6 +2,9 @@
 
 /* --- RESET --- */
 :root {
+
+   /* Colors card  */
+   
   /* FIRE */
   --fire-header: linear-gradient(
     176.37deg,
@@ -32,8 +35,8 @@
     #cae099 99.08%
   );
 
-  --grass-text: #416460;
-  --grass-border: #416460;
+  --grass-text: #7ec6c5;
+  --grass-border: #7ec6c5;
 
   /* BUG */
 
@@ -202,12 +205,12 @@
 
   --steel-text: #5E736C;
   --steel-border: #5E736C;
+
+
 }
 
 * {
   box-sizing: border-box;
-
-  /* Colors card  */
 }
 
 body {
@@ -242,3 +245,4 @@ button {
   border: none;
   cursor: pointer;
 }
+
