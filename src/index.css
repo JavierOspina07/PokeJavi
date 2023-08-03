@@ -246,3 +246,13 @@ button {
   cursor: pointer;
 }
 
+/* Cambiar el color del "pulgar" (scrollbar thumb) en Chrome/Safari */
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #0c0c0c; /* Color de fondo de la scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #dd1a1a; /* Color del "pulgar" de la scrollbar */
+  border-radius: 5px;
+}

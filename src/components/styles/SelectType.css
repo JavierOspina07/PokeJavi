@@ -1,0 +1,100 @@
+.custom-select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  width: 15em;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* Cambiar el color de fondo de la scrollbar */
+.custom-select::-webkit-scrollbar {
+  width: 10px;
+  background-color: #0c0c0c; 
+}
+
+/* Cambiar el color del "pulgar" (scrollbar thumb) */
+.custom-select::-webkit-scrollbar-thumb {
+  background-color: #dd1a1a; 
+  border-radius: 5px;
+}
+
+.allpokemons {
+  color: black;
+  background-color: rgb(199, 117, 117);
+}
+
+.custom-select option {
+  padding: 8px 12px;
+  color: white;
+}
+
+/* estilos para nombres del filtro */
+.custom-select option.fire {
+  background-color: var(--fire-text);
+}
+.custom-select option.water {
+  background-color: var(--water-text);
+}
+
+.custom-select option.grass {
+  background-color: var(--grass-text);
+}
+.custom-select option.bug {
+  background-color: var(--bug-text);
+}
+.custom-select option.normal {
+  background-color: var(--normal-text);
+}
+.custom-select option.poison {
+  background-color: var(--poison-text);
+}
+
+.custom-select option.electric {
+  background-color: var(--electric-text);
+}
+
+.custom-select option.ground {
+  background-color: var(--ground-text);
+}
+
+.custom-select option.fairy {
+  background-color: var(--fairy-text);
+}
+.custom-select option.psychic {
+  background-color: var(--psychic-text);
+}
+.custom-select option.fighting {
+  background-color: var(--fighting-text);
+}
+.custom-select option.rock {
+  background-color: var(--rock-text);
+}
+.custom-select option.ghost {
+  background-color: var(--ghost-text);
+}
+.custom-select option.ice {
+  background-color: var(--ice-text);
+}
+.custom-select option.dragon {
+  background-color: var(--dragon-text);
+}
+.custom-select option.dark {
+  background-color: var(--dark-text);
+}
+.custom-select option.steel {
+  background-color: var(--steel-text);
+}
+.custom-select option.flying {
+  background-color: #0ce1e9;
+}
+.custom-select option.shadow {
+  background-color: #e99c0c;
+}
+.custom-select option.unknown {
+  background-color: #e90c0c;
+}

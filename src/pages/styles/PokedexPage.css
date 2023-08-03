@@ -1,7 +1,119 @@
-.card-container {
-    display: flex;
-    gap: 1em ;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+.pokedex{
+  margin-bottom: 1.5em;
+}
+
+.pokedex__rectangle-red {
+  position: relative;
+  width: 100%;
+  height: 4em;
+  background-color: #dd1a1a;
+}
+
+.pokedex__tittle {
+  position: absolute;
+  width: 15em;
+  height: auto;
+  bottom: -0.5em;
+  margin-left: 4em;
+  z-index: 1;
+}
+
+.pokedex__rectangle-black {
+  position: relative;
+  width: 100%;
+  height: 2.3em;
+  background-color: #0c0c0c;
+}
+
+.pokeball__ext {
+  position: absolute;
+  width: 5em;
+  height: auto;
+  top: 50%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+}
+
+.pokeball__int {
+  position: absolute;
+  width: 2.7em;
+  height: auto;
+  top: 50%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+}
+
+.pokedex__welcome {
+  width: 30em;
+  height: auto;
+  flex-shrink: 0;
+  margin-top: 1em;
+  margin-left: 7em;
+}
+
+.pokedex__name {
+  color: #fe1936;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.pokedex__form {
+  display: flex;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 7em;
+}
+
+.pokedex__search-input {
+  width: 25em;
+  height: 3em;
+  background: #fff;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+}
+.pokedex__search-input::placeholder {
+  color: #d3d3d3;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.pokedex__serach-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 10em;
+  height: 3em;
+  background: #d93f3f;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+  margin-right: 1em;
+  color: #fff;
+  text-align: center;
+  font-size: 0.85em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  outline: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+.pokedex__serach-btn:hover{
+  background-color: #b33434;
+
+}
+
+.pokedex__serach-btn:active {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.pokedex__card-container {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }

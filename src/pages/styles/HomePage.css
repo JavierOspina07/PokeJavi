@@ -1,0 +1,95 @@
+.home-countainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 8em;
+  width: 100%;
+  height: 100%;
+}
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.home__img {
+  margin-bottom: 2em;
+}
+
+.home__title {
+  color: #fe1936;
+  text-align: center;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.home__description {
+  color: #302f2f;
+  text-align: center;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.home__form-input {
+  width: 45em;
+  height: 3em;
+  background: #fff;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+}
+
+.home__form-btn {
+  width: 10em;
+  height: 2em;
+  flex-shrink: 0;
+  background: #d93f3f;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+}
+
+.home__form-input::placeholder {
+  color: #d3d3d3;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.home__footer{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.home__rectangle-red{
+  width: 100%;
+  height: 4em;
+  background-color: #DD1A1A;
+}
+.home__rectangle-black{
+  position: relative;
+  width: 100%;
+  height: 2.3em;
+  background-color: #0C0C0C;
+}
+
+.pokebola{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6em;
+}
