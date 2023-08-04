@@ -1,0 +1,64 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination__previous {
+  width: 8em;
+  height: 3em;
+  border-radius: 6px;
+  background: #dd1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fbfbfb;
+  text-align: center;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.pagination__Next {
+  width: 8em;
+  height: 3em;
+  border-radius: 6px;
+  background: #dd1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fbfbfb;
+  text-align: center;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Estilos para los botones de la paginación */
+.pagination__number button {
+  padding: 5px 10px;
+  margin: 2px;
+  color: #333;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+
+/* Estilo para el botón activo */
+.pagination__number button.active {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  background-image: url(https://benjamin-flores.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F99075494-38e7-40c1-9e0d-9eb090c7c6bd%2Fpokeball.png?table=block&id=133f4450-b3f4-4344-9499-8b9a5318019f&spaceId=35066e2c-3339-430c-80ca-dae715f7e3af&width=250&userId=&cache=v2);
+  background-size: cover;
+  color: black;
+  font-weight: bold;
+  border-color: #dd1a1a;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  cursor: pointer;
+}

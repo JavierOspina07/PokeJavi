@@ -11,6 +11,11 @@
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
 }
 
+.custom-select:hover{
+  background-color: #f1f1f1;
+  color: #dd1a1a;
+}
+
 /* Cambiar el color de fondo de la scrollbar */
 .custom-select::-webkit-scrollbar {
   width: 10px;
@@ -32,6 +37,7 @@
   padding: 8px 12px;
   color: white;
 }
+
 
 /* estilos para nombres del filtro */
 .custom-select option.fire {

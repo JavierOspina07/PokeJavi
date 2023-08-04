@@ -37,21 +37,28 @@
   line-height: normal;
 }
 
+.home__form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .home__form-input {
+  display: flex;
+  align-items: center;
   width: 45em;
-  height: 3em;
-  background: #fff;
+  height: 3.5em;
+  background: #FFFFFF;
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
 }
 
 .home__form-btn {
   width: 10em;
   height: 2em;
-  flex-shrink: 0;
   background: #d93f3f;
   color: #fff;
   text-align: center;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -59,8 +66,11 @@
 }
 
 .home__form-input::placeholder {
+  display: flex;
+  align-items: center;
+  text-indent: 1em;
   color: #d3d3d3;
-  font-size: 25px;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;

@@ -1,17 +1,19 @@
+import React, { useState, useEffect, useRef } from "react"
 import { useSelector } from "react-redux"
 import useFetch from "../hooks/useFetch"
-import { useEffect, useRef, useState } from "react"
 import PokeCard from "../components/PokedexPage/PokeCard"
 import "./styles/PokedexPage.css"
 import SelectType from "../components/PokedexPage/SelectType"
+import Pagination from "../components/Pagination/Pagination"
 
 const PokedexPage = () => {
   const [inputValue, setInputValue] = useState("")
   const [selectValue, setSelectValue] = useState("allPokemons")
+  const [currentPage, setCurrentPage] = useState(1)
 
   const trainer = useSelector(reducer => reducer.trainer)
 
-  const url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=12"
+  const url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=1300"
   const [pokemons, getAllPokemons, getPokemonsByType] = useFetch(url)
 
   useEffect(() => {
@@ -25,13 +27,32 @@ const PokedexPage = () => {
   const handleSubmit = e => {
     e.preventDefault()
     setInputValue(inputSearch.current.value.trim().toLowerCase())
+    setCurrentPage(1)
+  }
+  const cbFilter = poke => (inputValue ? poke.name.includes(inputValue) : true)
+
+  // Obtener la longitud de los pokemons después de aplicar el filtro
+  const filteredPokemons = pokemons?.results.filter(cbFilter) || []
+  const totalResidents = filteredPokemons.length
+
+  // Calcular el número total de páginas después de aplicar el filtro
+  const residentsPerPage = 6
+  const totalPages = Math.ceil(totalResidents / residentsPerPage)
+
+  // Calcular el índice de inicio y fin de los pokemons en la página actual después de aplicar el filtro
+  const startIndex = (currentPage - 1) * residentsPerPage
+  const endIndex = Math.min(startIndex + residentsPerPage, totalResidents)
+
+  // Obtener los pokemons que se mostrarán en la página actual después de aplicar el filtro y paginación
+  const pokemonsToShow = filteredPokemons.slice(startIndex, endIndex)
+
+  const handlePageChange = page => {
+    setCurrentPage(page)
   }
 
-  const cbFilter = poke => poke.name.includes(inputValue)
-
   return (
-    <div class="pokedex">
-      <header class="pokedex__header">
+    <div className="pokedex">
+      <header className="pokedex__header">
         <div className="pokedex__rectangle-red">
           <img
             className="pokedex__tittle"
@@ -44,20 +65,32 @@ const PokedexPage = () => {
           <img className="pokeball__int " src="/img/interna.svg" alt="" />
         </div>
       </header>
-      <p class="pokedex__welcome">
+      <p className="pokedex__welcome">
         <span className="pokedex__name">Welcome {trainer}</span>, here you can
         find your favorite pokemon
       </p>
-      <form class="pokedex__form" onSubmit={handleSubmit}>
-        <input class="pokedex__search-input" ref={inputSearch} type="text" placeholder="pokemon name" />
-        <button class="pokedex__serach-btn">Search</button>
+      <form className="pokedex__form" onSubmit={handleSubmit}>
+        <input
+          className="pokedex__search-input"
+          ref={inputSearch}
+          type="text"
+          placeholder="pokemon name"
+        />
+        <button className="pokedex__serach-btn">Search</button>
         <SelectType setSelectValue={setSelectValue} />
       </form>
-      <div class="pokedex__card-container">
-        {pokemons?.results.filter(cbFilter).map(poke => (
+      <div className="pokedex__card-container">
+        {pokemonsToShow.map(poke => (
           <PokeCard key={poke.url} url={poke.url} />
         ))}
       </div>
+
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+        pagesToShow={10}
+      />
     </div>
   )
 }

@@ -1,3 +1,13 @@
+
+.pokedex__card-container {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1em;
+}
+
 .pokedex{
   margin-bottom: 1.5em;
 }
@@ -110,10 +120,3 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.pokedex__card-container {
-  display: flex;
-  gap: 1em;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
