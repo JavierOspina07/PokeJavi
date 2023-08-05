@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import useFetch from "../hooks/useFetch"
 import { useEffect } from "react"
+import "./styles/PokeIdPage.css"
 
 const PokeIdPage = () => {
   const { id } = useParams()
@@ -14,59 +15,125 @@ const PokeIdPage = () => {
 
   console.log(pokemon)
 
+  const firstType = pokemon?.types[0]?.type.name
+  const secondType = pokemon?.types[1]?.type.name
+
   return (
-    <article>
-      <img
-        className="pokecard__image"
-        src={pokemon?.sprites.other["official-artwork"].front_default}
-        alt=""
-      />
-      <h2>{pokemon?.id}</h2>
-      <h2>{pokemon?.name}</h2>
-      <hr />
-      <ul>
-        <li>
-          <h2>Peso</h2>
-          <span>{pokemon?.weight}</span>
-        </li>
-        <li>
-          <h2>altura</h2>
-          <span>{pokemon?.height}</span>
-        </li>
-      </ul>
-      <div className="type">
-        <h2>Type</h2>
-        <ul>
-          {pokemon?.types.map(typeinfo => (
-            <li key={typeinfo.type.url}>{typeinfo.type.name}</li>
-          ))}
-        </ul>
-      </div>
+    <div className="page-info">
+      <header className="pokedex__header">
+        <div className="pokedex__rectangle-red">
+          <img
+            className="pokedex__tittle"
+            src="/img/pokedextittle.png"
+            alt=""
+          />
+        </div>
+        <div className="pokedex__rectangle-black">
+          <img className="pokeball__ext" src="/img/externa.svg" alt="" />
+          <img className="pokeball__int " src="/img/interna.svg" alt="" />
+        </div>
+      </header>
 
-      <div className="skills">
-        <h2>skills</h2>
-        <ul>
-          {pokemon?.abilities.map(abilitiesinfo => (
-            <li key={abilitiesinfo.ability.name}>
-              {abilitiesinfo.ability.name}
+      <article className="pokeinfo">
+        <section className="pokeinfo__info">
+          <header className={`pokeinfo__header ${firstType}-header`}>
+            <img
+              className="pokeinfo__image"
+              src={pokemon?.sprites.other["official-artwork"].front_default}
+              alt=""
+            />
+          </header>
+
+          <div className="pokeinfo__id-rectangle">
+            <h2 className={`pokeinfo__id ${firstType}-text `}>
+              # {pokemon?.id}
+            </h2>
+          </div>
+
+          <div className="pokeinfo__name-countainer">
+            <h2 className={`pokeinfo__name ${firstType}-text`}>
+              {pokemon?.name}
+            </h2>
+            <hr className="pokeinfo__separator-name" />
+          </div>
+
+          <ul className="pokeinfo__weight-and-height">
+            <li className="pokeinfo__item">
+              <h3 className="pokeinfo__item-title">Peso</h3>
+              <span className="pokeinfo__item-value">{pokemon?.weight}</span>
             </li>
-          ))}
-        </ul>
-      </div>
-      <hr />
-        <h2>Stats</h2>
-      <ul>
-        {pokemon?.stats.map(statinfo =>(
-          <li key={statinfo.stat.url}>
-            <h3>{statinfo.stat.name}:</h3>
-            <span>{statinfo.base_stat}/150</span>
+            <li className="pokeinfo__item">
+              <h3 className="pokeinfo__item-title">Altura</h3>
+              <span className="pokeinfo__item-value">{pokemon?.height}</span>
+            </li>
+          </ul>
 
-          </li>
-        ))
+          <div className="pokeinfo__type-skills">
+            <div className="pokeinfo__type">
+              <h2 className="pokeinfo__subheading">Type</h2>
+              <ul className="pokeinfo__type-list">
+                {pokemon?.types.map((typeinfo, index) => (
+                  <li
+                    key={typeinfo.type.url}
+                    className={`pokeinfo__type-list-name ${
+                      index === 0 ? firstType || secondType : secondType
+                    }-header`}
+                  >
+                    {typeinfo.type.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-        }
-      </ul>
-    </article>
+            <div className="pokeinfo__skills">
+              <h2 className="pokeinfo__subheading">Skills</h2>
+              <ul className="pokeinfo__skills-list">
+                {pokemon?.abilities.map(abilitiesinfo => (
+                  <li
+                    key={abilitiesinfo.ability.name}
+                    className="pokeinfo__skill-item"
+                  >
+                    {abilitiesinfo.ability.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <footer class="pokeinfo__footer">
+            <div className="pokeinfo__footer-tittle">
+              <h2 className="pokeinfo__footer__subheading">Stats</h2>
+              <hr className="pokeinfo__separator" />
+              <img className="pokeinfo__footer-img" src="/img/pokeballdetalle.svg" alt="" />
+            </div>
+            <ul class="pokeinfo__stat-list">
+              {pokemon?.stats.map(statinfo => (
+                <li key={statinfo.stat.url} class="pokeinfo__stat-item">
+                  <h3 class="pokeinfo__stat-name">{statinfo.stat.name}:</h3>
+                  <span class="pokeinfo__stat-value">
+                    {statinfo.base_stat}/150
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </footer>
+        </section>
+
+        <section className="pokeinfo__movements">
+          <h1 className="pokeinfo__subheading">Movements</h1>
+          <hr />
+          <ul>
+            {pokemon?.moves.map(moveinfo => (
+              <li key={moveinfo.move.url} className="pokeinfo__movement-item">
+                <span className="pokeinfo__movement-name">
+                  {moveinfo.move.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </article>
+    </div>
   )
 }
 
