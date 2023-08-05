@@ -15,8 +15,7 @@ const PokeIdPage = () => {
 
   console.log(pokemon)
 
-  const firstType = pokemon?.types[0]?.type.name
-  const secondType = pokemon?.types[1]?.type.name
+  const firstType = pokemon?.types[0].type.name
 
   return (
     <div className="page-info">
@@ -72,12 +71,10 @@ const PokeIdPage = () => {
             <div className="pokeinfo__type">
               <h2 className="pokeinfo__subheading">Type</h2>
               <ul className="pokeinfo__type-list">
-                {pokemon?.types.map((typeinfo, index) => (
+                {pokemon?.types.map(typeinfo => (
                   <li
                     key={typeinfo.type.url}
-                    className={`pokeinfo__type-list-name ${
-                      index === 0 ? firstType || secondType : secondType
-                    }-header`}
+                    className={`pokeinfo__type-list-name ${typeinfo.type.name}-header`}
                   >
                     {typeinfo.type.name}
                   </li>
@@ -104,18 +101,34 @@ const PokeIdPage = () => {
             <div className="pokeinfo__footer-tittle">
               <h2 className="pokeinfo__footer__subheading">Stats</h2>
               <hr className="pokeinfo__separator" />
-              <img className="pokeinfo__footer-img" src="/img/pokeballdetalle.svg" alt="" />
+              <img
+                className="pokeinfo__footer-img"
+                src="/img/pokeballdetalle.svg"
+                alt=""
+              />
             </div>
-            <ul class="pokeinfo__stat-list">
-              {pokemon?.stats.map(statinfo => (
-                <li key={statinfo.stat.url} class="pokeinfo__stat-item">
-                  <h3 class="pokeinfo__stat-name">{statinfo.stat.name}:</h3>
-                  <span class="pokeinfo__stat-value">
-                    {statinfo.base_stat}/150
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <div class="pokeinfo__statistics">
+              <ul class="pokeinfo__stat-list">
+                {pokemon?.stats.map(statinfo => (
+                  <li key={statinfo.stat.url} class="pokeinfo__stat-item">
+                    <h3 class="pokeinfo__stat-name">{statinfo.stat.name}</h3>
+                    <span class="pokeinfo__stat-number">
+                      {statinfo.base_stat}/160
+                    </span>
+                    <div class="pokeinfo__stat-bar-container">
+                      <div class="pokeinfo__stat-bar">
+                        <span
+                          class="pokeinfo__stat-value"
+                          style={{
+                            width: `${(statinfo.base_stat / 160) * 100}%`,
+                          }}
+                        ></span>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </footer>
         </section>
 

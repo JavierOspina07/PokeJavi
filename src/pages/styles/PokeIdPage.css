@@ -160,12 +160,9 @@
   border: 1px solid #d3d3d3;
 }
 
-
-
-.pokeinfo__footer{
+.pokeinfo__footer {
   display: flex;
   flex-direction: column;
-  
 }
 
 .pokeinfo__footer__subheading {
@@ -178,20 +175,69 @@
   margin-left: 1em;
 }
 
-.pokeinfo__footer-tittle{
+.pokeinfo__footer-tittle {
   display: flex;
   align-items: center;
-  margin-left: 1em ;
+  margin-left: 1em;
   margin-right: 1em;
 }
 
-.pokeinfo__separator{
+.pokeinfo__separator {
   width: 60%;
   stroke: #9f9f9f;
 }
 
-.pokeinfo__footer-img{
+.pokeinfo__footer-img {
   width: 5em;
   height: auto;
   margin-right: 1em;
 }
+
+.pokeinfo__statistics {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokeinfo__stat-item {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0.8em; /* Espacio entre cada estadística */
+}
+
+
+
+
+
+.pokeinfo__stat-name {
+  font-size: 16px;
+  font-weight: bold;
+  flex-basis: 120px; /* Ancho fijo para el nombre */
+}
+
+.pokeinfo__stat-bar-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.pokeinfo__stat-bar {
+  height: 12px;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden; /* Para ocultar la parte de la barra que excede su contenedor */
+  flex-grow: 1;
+  margin-right: 8px; /* Espacio entre la barra y el número */
+}
+
+.pokeinfo__stat-value {
+  display: block;
+  height: 100%;
+  background-color: #4caf50;
+}
+
+.pokeinfo__stat-number {
+  font-size: 14px;
+}
+
