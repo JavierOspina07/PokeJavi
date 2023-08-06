@@ -294,7 +294,7 @@
 }
 
 .pokeinfo__movement-name {
-  display: inline-flex;
+  display: flex;
   padding: 1em 1.6em;
   gap: 0.7em;
   border-radius: 3em;
@@ -302,7 +302,6 @@
   color: #302f2f;
   text-align: center;
   font-size: 1.5em;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-style: normal; 
+  font-weight: 500;
 }
