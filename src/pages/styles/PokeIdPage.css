@@ -10,7 +10,7 @@
   flex-direction: column;
   margin-top: 6em;
   width: 50em;
-  height: 60em;
+  height: 70em;
   border-radius: 4px;
   background: #fff;
   box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.15);
@@ -178,8 +178,6 @@
 .pokeinfo__footer-tittle {
   display: flex;
   align-items: center;
-  margin-left: 1em;
-  margin-right: 1em;
 }
 
 .pokeinfo__separator {
@@ -196,24 +194,42 @@
 .pokeinfo__statistics {
   display: flex;
   flex-direction: column;
+  padding: 4em;
 }
 
-.pokeinfo__stat-item {
+.pokeinfo__statistics-name-value {
   display: flex;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  margin-bottom: 0.8em; /* Espacio entre cada estadística */
+  position: relative;
+  flex-direction: column;
 }
-
-
-
-
 
 .pokeinfo__stat-name {
-  font-size: 16px;
+  color: #302f2f;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.pokeinfo__stat-number {
+  position: absolute;
+  right: 0;
+  margin-right: 1em;
+  color: #302f2f;
+  text-align: right;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.pokeinfo__stat-item {
+  margin-bottom: 2em;
+}
+
+.pokeinfo__stat-name {
+  font-size: 1em;
   font-weight: bold;
-  flex-basis: 120px; /* Ancho fijo para el nombre */
+  flex-basis: 7.5em;
 }
 
 .pokeinfo__stat-bar-container {
@@ -223,21 +239,70 @@
 }
 
 .pokeinfo__stat-bar {
-  height: 12px;
-  background-color: #fff;
-  border-radius: 4px;
-  overflow: hidden; /* Para ocultar la parte de la barra que excede su contenedor */
+  height: 1em;
+  background-color: #f6f6f6;
+  border-radius: 0.1 em;
+  overflow: hidden;
   flex-grow: 1;
-  margin-right: 8px; /* Espacio entre la barra y el número */
+  margin-right: 8px;
 }
 
 .pokeinfo__stat-value {
   display: block;
   height: 100%;
-  background-color: #4caf50;
+  background: linear-gradient(90deg, #fcd676 0%, #e6901e 100%);
 }
 
 .pokeinfo__stat-number {
   font-size: 14px;
 }
 
+.pokeinfo__name-value {
+  display: flex;
+}
+
+.pokeinfo__movements {
+  display: flex;
+  flex-direction: column;
+  width: 50em;
+  height: auto;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.15);
+  padding: 3.5em;
+  margin-bottom: 2em;
+}
+
+.pokeinfo__movements-tittle {
+  display: flex;
+  align-items: center;
+}
+
+.pokeinfo__movements-name {
+  color: #302f2f;
+  font-size: 3em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-right: 0.5em;
+}
+
+.pokeinfo-attacks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.pokeinfo__movement-name {
+  display: inline-flex;
+  padding: 1em 1.6em;
+  gap: 0.7em;
+  border-radius: 3em;
+  background: #e5e5e5;
+  color: #302f2f;
+  text-align: center;
+  font-size: 1.5em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

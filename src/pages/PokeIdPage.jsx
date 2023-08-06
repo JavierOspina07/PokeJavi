@@ -107,22 +107,30 @@ const PokeIdPage = () => {
                 alt=""
               />
             </div>
+
             <div class="pokeinfo__statistics">
               <ul class="pokeinfo__stat-list">
                 {pokemon?.stats.map(statinfo => (
                   <li key={statinfo.stat.url} class="pokeinfo__stat-item">
-                    <h3 class="pokeinfo__stat-name">{statinfo.stat.name}</h3>
-                    <span class="pokeinfo__stat-number">
-                      {statinfo.base_stat}/160
-                    </span>
-                    <div class="pokeinfo__stat-bar-container">
-                      <div class="pokeinfo__stat-bar">
-                        <span
-                          class="pokeinfo__stat-value"
-                          style={{
-                            width: `${(statinfo.base_stat / 160) * 100}%`,
-                          }}
-                        ></span>
+                    <div className="pokeinfo__statistics-name-value">
+                      <div className="pokeinfo__name-value">
+                        <h3 class="pokeinfo__stat-name">
+                          {statinfo.stat.name}
+                        </h3>
+                        <span class="pokeinfo__stat-number">
+                          {statinfo.base_stat}/160
+                        </span>
+                      </div>
+
+                      <div class="pokeinfo__stat-bar-container">
+                        <div class="pokeinfo__stat-bar">
+                          <span
+                            class="pokeinfo__stat-value"
+                            style={{
+                              width: `${(statinfo.base_stat / 160) * 100}%`,
+                            }}
+                          ></span>
+                        </div>
                       </div>
                     </div>
                   </li>
@@ -133,9 +141,16 @@ const PokeIdPage = () => {
         </section>
 
         <section className="pokeinfo__movements">
-          <h1 className="pokeinfo__subheading">Movements</h1>
-          <hr />
-          <ul>
+          <div className="pokeinfo__movements-tittle">
+            <h1 className="pokeinfo__movements-name">Movements</h1>
+            <hr className="pokeinfo__separator"/>
+            <img
+                className="pokeinfo__footer-img"
+                src="/img/pokeballdetalle.svg"
+                alt=""
+              />
+          </div>
+          <ul className="pokeinfo-attacks">
             {pokemon?.moves.map(moveinfo => (
               <li key={moveinfo.move.url} className="pokeinfo__movement-item">
                 <span className="pokeinfo__movement-name">
