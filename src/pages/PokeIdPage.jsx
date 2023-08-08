@@ -1,11 +1,11 @@
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import useFetch from "../hooks/useFetch"
 import { useEffect } from "react"
 import "./styles/PokeIdPage.css"
 
 const PokeIdPage = () => {
   const { id } = useParams()
-
+  const navigate = useNavigate()
   const url = `https://pokeapi.co/api/v2/pokemon/${id}/`
   const [pokemon, getSinglePokemon] = useFetch(url)
 
@@ -14,6 +14,10 @@ const PokeIdPage = () => {
   }, [id])
 
   console.log(pokemon)
+
+  const handleNavigate = () => {
+    navigate("/pokedex")
+  }
 
   const firstType = pokemon?.types[0].type.name
 
@@ -25,6 +29,7 @@ const PokeIdPage = () => {
             className="pokedex__tittle"
             src="/img/pokedextittle.png"
             alt=""
+            onClick={handleNavigate}
           />
         </div>
         <div className="pokedex__rectangle-black">
@@ -58,11 +63,11 @@ const PokeIdPage = () => {
 
           <ul className="pokeinfo__weight-and-height">
             <li className="pokeinfo__item">
-              <h3 className="pokeinfo__item-title">Peso</h3>
+              <h3 className="pokeinfo__item-title">Weight</h3>
               <span className="pokeinfo__item-value">{pokemon?.weight}</span>
             </li>
             <li className="pokeinfo__item">
-              <h3 className="pokeinfo__item-title">Altura</h3>
+              <h3 className="pokeinfo__item-title">height</h3>
               <span className="pokeinfo__item-value">{pokemon?.height}</span>
             </li>
           </ul>
@@ -97,7 +102,7 @@ const PokeIdPage = () => {
             </div>
           </div>
 
-          <footer class="pokeinfo__footer">
+          <footer className="pokeinfo__footer">
             <div className="pokeinfo__footer-tittle">
               <h2 className="pokeinfo__footer__subheading">Stats</h2>
               <hr className="pokeinfo__separator" />
@@ -108,24 +113,24 @@ const PokeIdPage = () => {
               />
             </div>
 
-            <div class="pokeinfo__statistics">
-              <ul class="pokeinfo__stat-list">
+            <div className="pokeinfo__statistics">
+              <ul className="pokeinfo__stat-list">
                 {pokemon?.stats.map(statinfo => (
-                  <li key={statinfo.stat.url} class="pokeinfo__stat-item">
+                  <li key={statinfo.stat.url} className="pokeinfo__stat-item">
                     <div className="pokeinfo__statistics-name-value">
                       <div className="pokeinfo__name-value">
-                        <h3 class="pokeinfo__stat-name">
+                        <h3 className="pokeinfo__stat-name">
                           {statinfo.stat.name}
                         </h3>
-                        <span class="pokeinfo__stat-number">
+                        <span className="pokeinfo__stat-number">
                           {statinfo.base_stat}/160
                         </span>
                       </div>
 
-                      <div class="pokeinfo__stat-bar-container">
-                        <div class="pokeinfo__stat-bar">
+                      <div className="pokeinfo__stat-bar-container">
+                        <div className="pokeinfo__stat-bar">
                           <span
-                            class="pokeinfo__stat-value"
+                            className="pokeinfo__stat-value"
                             style={{
                               width: `${(statinfo.base_stat / 160) * 100}%`,
                             }}
@@ -142,13 +147,13 @@ const PokeIdPage = () => {
 
         <section className="pokeinfo__movements">
           <div className="pokeinfo__movements-tittle">
-            <h1 className="pokeinfo__movements-name">Movements</h1>
-            <hr className="pokeinfo__separator"/>
+            <h2 className="pokeinfo__movements-name">Movements</h2>
+            <hr className="pokeinfo__separator" />
             <img
-                className="pokeinfo__footer-img"
-                src="/img/pokeballdetalle.svg"
-                alt=""
-              />
+              className="pokeinfo__footer-img"
+              src="/img/pokeballdetalle.svg"
+              alt=""
+            />
           </div>
           <ul className="pokeinfo-attacks">
             {pokemon?.moves.map(moveinfo => (

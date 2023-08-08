@@ -79,6 +79,15 @@ const PokedexPage = () => {
         <button className="pokedex__serach-btn">Search</button>
         <SelectType setSelectValue={setSelectValue} />
       </form>
+
+             
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+        pagesToShow={10}
+      />
+
       <div className="pokedex__card-container">
         {pokemonsToShow.map(poke => (
           <PokeCard key={poke.url} url={poke.url} />
