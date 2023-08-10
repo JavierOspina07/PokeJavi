@@ -28,6 +28,7 @@ const PokedexPage = () => {
     e.preventDefault()
     setInputValue(inputSearch.current.value.trim().toLowerCase())
     setCurrentPage(1)
+    setSelectValue('allPokemons')
   }
   const cbFilter = poke => (inputValue ? poke.name.includes(inputValue) : true)
 
@@ -36,12 +37,13 @@ const PokedexPage = () => {
   const totalResidents = filteredPokemons.length
 
   // Calcular el número total de páginas después de aplicar el filtro
-  const residentsPerPage = 6
+  const [residentsPerPage, setResidentsPerPage] = useState(6)
+  // const residentsPerPage = 
   const totalPages = Math.ceil(totalResidents / residentsPerPage)
 
   // Calcular el índice de inicio y fin de los pokemons en la página actual después de aplicar el filtro
-  const startIndex = (currentPage - 1) * residentsPerPage
-  const endIndex = Math.min(startIndex + residentsPerPage, totalResidents)
+  const endIndex = (currentPage) * residentsPerPage
+  const startIndex =  endIndex - residentsPerPage
 
   // Obtener los pokemons que se mostrarán en la página actual después de aplicar el filtro y paginación
   const pokemonsToShow = filteredPokemons.slice(startIndex, endIndex)
@@ -77,10 +79,16 @@ const PokedexPage = () => {
           placeholder="pokemon name"
         />
         <button className="pokedex__serach-btn">Search</button>
-        <SelectType setSelectValue={setSelectValue} />
+
+        <SelectType
+          setSelectValue={setSelectValue}
+          setInputValue={setInputValue}
+          inputSearch={inputSearch}
+          selectValue={selectValue}
+          setResidentsPerPage={setResidentsPerPage}
+        />
       </form>
 
-             
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
