@@ -19,7 +19,7 @@ const HomePage = () => {
   }
 
   return (
-    <div className="home-countainer">
+    <div className="home-container">
       <div className="home">
         <img className="home__img" src="/img/pokedextittle.png" alt="" />
         <h2 className="home__title">¡Hi trainer!</h2>

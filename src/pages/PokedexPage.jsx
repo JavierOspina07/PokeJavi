@@ -30,6 +30,7 @@ const PokedexPage = () => {
     setCurrentPage(1)
     setSelectValue('allPokemons')
   }
+  
   const cbFilter = poke => (inputValue ? poke.name.includes(inputValue) : true)
 
   // Obtener la longitud de los pokemons después de aplicar el filtro

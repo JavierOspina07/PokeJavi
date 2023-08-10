@@ -27,7 +27,7 @@ const SelectType = ({
   }
 
   return (
-    <div>
+    <div className="custom-container">
       <select
         value={selectValue}
         onChange={handleChange}
@@ -42,15 +42,15 @@ const SelectType = ({
           </option>
         ))}
       </select>
+      <h3>#Card</h3>
       <span>
-        <select  className="" onChange={handleChangeCard}>
+        <select  className="custom__card-number" onChange={handleChangeCard}>
           <option value="6">6</option>
           <option value="9">9</option>
           <option value="12">12</option>
           <option value="15">15</option>
         </select>
       </span>
-      <h3>#Card</h3>
     </div>
   )
 }
