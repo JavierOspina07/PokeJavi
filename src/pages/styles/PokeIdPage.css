@@ -46,7 +46,8 @@
 .pokeinfo__id-rectangle {
   margin: 1em auto;
   border: 1px solid #d3d3d3;
-  width: 3em;
+  width: auto;
+  padding: 1em  ;
 }
 .pokeinfo__id {
   text-align: center;
@@ -298,13 +299,13 @@
 
 .pokeinfo__movement-name {
   display: flex;
-  padding: 1em 1.6em;
+  padding: 1em 1em;
   gap: 0.7em;
   border-radius: 3em;
   background: #e5e5e5;
   color: #302f2f;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1em;
   font-style: normal; 
   font-weight: 500;
 }
