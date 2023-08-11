@@ -39,7 +39,7 @@ const SelectType = ({
         {types?.results.map(type => (
           <option key={type.url} value={type.url} className={type.name}>
             {type.name}
-          </option>
+          </option> 
         ))}
       </select>
       <h3>#Card</h3>
@@ -54,5 +54,7 @@ const SelectType = ({
     </div>
   )
 }
+
+
 
 export default SelectType
