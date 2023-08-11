@@ -63,6 +63,9 @@
   cursor: pointer;
 }
 
+/* ======= BREAKPOINTS ======== */
+
+
 @media (max-width: 760px){
   .pagination{
     display: flex;

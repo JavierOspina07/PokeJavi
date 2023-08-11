@@ -123,6 +123,9 @@
   background-color: #e90c0c;
 }
 
+/* ======= BREAKPOINTS ======== */
+
+
 @media (max-width: 769px) {
 
   .custom__card-number{
