@@ -122,3 +122,14 @@
 .custom-select option.unknown {
   background-color: #e90c0c;
 }
+
+@media (max-width: 769px) {
+
+  .custom__card-number{
+    width: 3em;
+  }
+  .card-num{
+    font-size: 1rem;
+  }
+}
+

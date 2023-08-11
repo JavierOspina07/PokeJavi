@@ -42,7 +42,7 @@ const SelectType = ({
           </option> 
         ))}
       </select>
-      <h3># Card</h3>
+      <h3 className="card-num"># Card</h3>
       <span>
         <select  className="custom__card-number" onChange={handleChangeCard}>
           <option value="6">6</option>
