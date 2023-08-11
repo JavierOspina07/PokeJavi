@@ -127,9 +127,10 @@
 @media (max-width: 769px) {
 
   .pokedex__welcome{
-    font-size:x-small;
-    margin-left: 1em;
+    font-size:small;
+    margin-left: 0.1em;
     white-space:wrap ;
+
   }
 
   .pokedex__form{
