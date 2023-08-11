@@ -120,3 +120,26 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
+
+
+/* ======= BREAKPOINTS ======== */
+
+@media (max-width: 769px) {
+
+  .pokedex__welcome{
+    font-size:x-small;
+    margin-left: 1em;
+    white-space:wrap ;
+  }
+
+  .pokedex__form{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 1em;
+   margin-left: 1em;
+  }
+
+}
+

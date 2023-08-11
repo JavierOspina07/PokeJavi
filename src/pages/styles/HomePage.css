@@ -105,7 +105,7 @@
 
 /* ======= BREAKPOINTS ======== */
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .home__img {
     width: 19em;
   }
@@ -146,5 +146,5 @@
 }
 
 @media (max-width: 1024px) {
-
+  
 }
