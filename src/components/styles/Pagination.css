@@ -70,4 +70,9 @@
     margin-left: 1em;
     margin-right: 1em;
   }
+
+  .pagination__number{
+    font-size: x-small;
+    margin: 0.1em;
+  }
 }
