@@ -1,85 +1,91 @@
 /*==== estilos para loader ====*/
-.loader {
-    /* nombrel contenerdor */
-    width: 250px;
-    height: 250px;
-    margin: 100px auto;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .loader__countainer {
-    /* div para poner fondo aplicado a fullscreen */
-    background: black;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.loader__countainer {
+  /* div para poner fondo aplicado a fullscreen */
+  background: linear-gradient( #dd1a1a 0%, white 100%);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-
+.loader_img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5em;
+  height: auto;
+}
 
 /* ===== Loader ===== */
 
 .loader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    overflow: hidden;
-    height: 80px;
-    width: 80px;
-    border: 1px solid transparent;
-    box-shadow: 0 0 0 2px #DD1A1A;
-    border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+.loader::before,
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 48em;
+  height: 48em;
+  background-image: radial-gradient(circle 10px, #fff 100%, transparent 0),
+    radial-gradient(circle 10px, #fff 100%, transparent 0),
+    radial-gradient(circle 10px, #fff 100%, transparent 0),
+    radial-gradient(circle 10px, #fff 100%, transparent 0),
+    radial-gradient(circle 10px, #fff 100%, transparent 0),
+    radial-gradient(circle 10px, #fff 100%, transparent 0),
+    radial-gradient(circle 10px, #fff 100%, transparent 0),
+    radial-gradient(circle 10px, #fff 100%, transparent 0);
+  background-position:
+    0em -18em,
+    0em 18em,
+    18em 0em,
+    -18em 0em,
+    13em -13em,
+    -13em -13em,
+    13em 13em,
+    -13em 13em;
+  background-repeat: no-repeat;
+  font-size: 0.5px;
+  border-radius: 50%;
+  animation: blast 1s ease-in infinite;
+}
+.loader::after {
+  font-size: 1px;
+  background: #fff;
+  animation: bounce 1s ease-in infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    font-size: 0.75px;
   }
-  
-  .waves {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: #DD1A1A;
-    box-shadow: inset 0 0 50px rgb(0,0,0,.3);
+  50% {
+    font-size: 1.5px;
   }
-  
-  .waves::before,
-  .waves::after {
-    content: '';
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -75%);
-    background: #000;
+}
+@keyframes blast {
+  0%,
+  40% {
+    font-size: 0.5px;
   }
-  
-  .waves::before {
-    border-radius: 45%;
-    background: rgb(248, 248, 248);
-    animation: wave91234 5s linear infinite;
+  70% {
+    opacity: 1;
+    font-size: 4px;
   }
-  
-  .waves::after {
-    border-radius: 40%;
-    background: rgb(255,255,255,.5);
-    animation: wave91234 10s linear infinite;
+  100% {
+    font-size: 6px;
+    opacity: 0;
   }
-  
-  @keyframes wave91234 {
-    0% {
-      transform: translate(-50%, -75%) rotate(0deg);
-    }
-  
-    100% {
-      transform: translate(-50%, -75%) rotate(360deg);
-    }
-  }
+}
