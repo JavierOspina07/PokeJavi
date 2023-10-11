@@ -1,26 +1,24 @@
-import React, { useState, useEffect, useRef } from "react"
-import { useSelector } from "react-redux"
-import useFetch from "../hooks/useFetch"
-import PokeCard from "../components/PokedexPage/PokeCard"
-import "./styles/PokedexPage.css"
-import SelectType from "../components/PokedexPage/SelectType"
-import Pagination from "../components/Pagination/Pagination"
-import Loader from "../components/Loader/Loader"
+import React, { useState, useEffect, useRef } from 'react'
+import { useSelector } from 'react-redux'
+import useFetch from '../hooks/useFetch'
+import PokeCard from '../components/PokedexPage/PokeCard'
+import './styles/PokedexPage.css'
+import SelectType from '../components/PokedexPage/SelectType'
+import Pagination from '../components/Pagination/Pagination'
+import Loader from '../components/Loader/Loader'
 
 const PokedexPage = () => {
-  const [inputValue, setInputValue] = useState("")
-  const [selectValue, setSelectValue] = useState("allPokemons")
+  const [inputValue, setInputValue] = useState('')
+  const [selectValue, setSelectValue] = useState('allPokemons')
   const [currentPage, setCurrentPage] = useState(1)
 
   const trainer = useSelector(reducer => reducer.trainer)
 
-  const url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=1300"
+  const url = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=1300'
   const [pokemons, getAllPokemons, getPokemonsByType, isloading] = useFetch(url)
 
   useEffect(() => {
-    selectValue === "allPokemons"
-      ? getAllPokemons()
-      : getPokemonsByType(selectValue)
+    selectValue === 'allPokemons' ? getAllPokemons() : getPokemonsByType(selectValue)
   }, [selectValue])
 
   const inputSearch = useRef()
@@ -29,7 +27,7 @@ const PokedexPage = () => {
     e.preventDefault()
     setInputValue(inputSearch.current.value.trim().toLowerCase())
     setCurrentPage(1)
-    setSelectValue("allPokemons")
+    setSelectValue('allPokemons')
   }
 
   const cbFilter = poke => (inputValue ? poke.name.includes(inputValue) : true)
@@ -55,37 +53,33 @@ const PokedexPage = () => {
   }
 
   return (
-    <div className="pokedex">
-      <header className="pokedex__header">
-        <div className="pokedex__rectangle-red">
-          <img
-            className="pokedex__tittle"
-            src="/img/pokedextittle.png"
-            alt=""
-          />
+    <div className='pokedex'>
+      <header className='pokedex__header'>
+        <div className='pokedex__rectangle-red'>
+          <img className='pokedex__tittle' src='/img/pokedextittle.png' alt='' />
         </div>
-        <div className="pokedex__rectangle-black">
-          <img className="pokeball__ext" src="/img/externa.svg" alt="" />
-          <img className="pokeball__int " src="/img/interna.svg" alt="" />
+        <div className='pokedex__rectangle-black'>
+          <img className='pokeball__ext' src='/img/externa.svg' alt='' />
+          <img className='pokeball__int ' src='/img/interna.svg' alt='' />
         </div>
       </header>
       {isloading ? (
-        <Loader/>
+        <Loader />
       ) : (
         <>
-          {" "}
-          <p className="pokedex__welcome">
-            <span className="pokedex__name">Welcome {trainer}</span>, here you
-            can find your favorite pokemon
+          {' '}
+          <p className='pokedex__welcome'>
+            <span className='pokedex__name'>Welcome {trainer}</span>, here you can find your
+            favorite pokemon
           </p>
-          <form className="pokedex__form" onSubmit={handleSubmit}>
+          <form className='pokedex__form' onSubmit={handleSubmit}>
             <input
-              className="pokedex__search-input"
+              className='pokedex__search-input'
               ref={inputSearch}
-              type="text"
-              placeholder="pokemon name"
+              type='text'
+              placeholder='pokemon name'
             />
-            <button className="pokedex__serach-btn">Search</button>
+            <button className='pokedex__serach-btn'>Search</button>
 
             <SelectType
               setSelectValue={setSelectValue}
@@ -101,7 +95,7 @@ const PokedexPage = () => {
             onPageChange={handlePageChange}
             pagesToShow={10}
           />
-          <div className="pokedex__card-container">
+          <div className='pokedex__card-container'>
             {pokemonsToShow.map(poke => (
               <PokeCard key={poke.url} url={poke.url} />
             ))}

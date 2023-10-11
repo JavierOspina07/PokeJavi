@@ -1,7 +1,7 @@
 /*==== estilos para loader ====*/
 .loader__countainer {
   /* div para poner fondo aplicado a fullscreen */
-  background: linear-gradient( #dd1a1a 0%, white 100%);
+  background: linear-gradient(#dd1a1a 0%, white 100%);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -20,8 +20,14 @@
   transform: translate(-50%, -50%);
   width: 5em;
   height: auto;
+  animation: spin 1s linear infinite;
 }
 
+@keyframes spin {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
 /* ===== Loader ===== */
 
 .loader {
