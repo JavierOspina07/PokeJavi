@@ -12,7 +12,7 @@ const useFetch = url => {
       .get(url)
       .then(res => setInfoApi(res.data))
       .catch(err => console.log(err))
-      .finally(() => setisLoading(true))
+      .finally(() => setisLoading(false))
   }
 
   const getTypeApi = urlType => {
@@ -26,7 +26,7 @@ const useFetch = url => {
         setInfoApi(obj)
       })
       .catch(err => console.log(err))
-      .finally(() => setisLoading(true))
+      .finally(() => setisLoading(false))
   }
   return [infoApi, getApi, getTypeApi, isLoading]
 }
